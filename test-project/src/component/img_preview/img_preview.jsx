@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './img_preview.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage} from "@fortawesome/free-solid-svg-icons"
 
-const ImgPreview = ({preview, cards}) => {
+const ImgPreview = memo(({preview, cards}) => {
     return (
         <li className={styles.preview}>
             { preview && cards && <img className={styles.img} src={preview.fileURL} alt="card" /> }
@@ -16,6 +16,6 @@ const ImgPreview = ({preview, cards}) => {
                 }
         </li>
     );
-};
+});
 
 export default ImgPreview;

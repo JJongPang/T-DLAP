@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './img_add_form.module.css';
 
-const ImageAddForm = ({FileInput, addCard}) => {
+const ImageAddForm = memo(({FileInput, addCard}) => {
     const formRef = useRef();
 
     const onFileChange = file => {
@@ -18,6 +18,6 @@ const ImageAddForm = ({FileInput, addCard}) => {
             <FileInput onFileChange={onFileChange} />
         </form>
     );
-};
+});
 
 export default ImageAddForm;

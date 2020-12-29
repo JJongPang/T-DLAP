@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import styles from './img_input.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage} from "@fortawesome/free-solid-svg-icons"
 
-const ImgInput = ({imageUploader, onFileChange}) => {
+const ImgInput = memo(({imageUploader, onFileChange}) => {
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
 
@@ -17,14 +17,13 @@ const ImgInput = ({imageUploader, onFileChange}) => {
         const uploaded = await imageUploader.upload(event.target.files[0]);
         setLoading(false);
         onFileChange({
-            name: uploaded.original_filename,
             url: uploaded.url
         })
     }
 
     return (
         <div>
-            <input ref={inputRef} className={styles.input} type="file" accept="image/*" name="file" onChange={onChange} />
+            <input ref={inputRef} className={styles.input} type="file" name="file" accept="image/*"  onChange={onChange} />
                 {!loading && 
                     <button className={styles.button} onClick={onButtonClick}>
                         <FontAwesomeIcon className={styles.icon} icon={faImage} />
@@ -33,6 +32,6 @@ const ImgInput = ({imageUploader, onFileChange}) => {
                 {loading && <div className={styles.loading}></div>}
         </div>
     );
-};
+});
 
 export default ImgInput;

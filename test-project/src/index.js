@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,7 +7,7 @@ import ImageUploader from './service/image_uploader';
 import ImgInput from './component/img_input/img_input';
 
 const imageUploader = new ImageUploader();
-const FileInput = (props) => <ImgInput {...props} imageUploader={imageUploader} />;
+const FileInput = memo((props) => <ImgInput {...props} imageUploader={imageUploader} />);
 
 ReactDOM.render(
     <React.StrictMode>

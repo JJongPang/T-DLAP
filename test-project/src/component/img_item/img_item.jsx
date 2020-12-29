@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './img_item.module.css';
 
-const ImgItem = ({ card, onDragStart, onDragOver, onDrop, onDragLeave, dataPosition}) => {
+const ImgItem = memo(({ card, onDragStart, onDragOver, onDrop, onDragLeave, dataPosition}) => {
     return(
         <li 
             className={styles.item}
@@ -15,6 +15,6 @@ const ImgItem = ({ card, onDragStart, onDragOver, onDrop, onDragLeave, dataPosit
             <img className={styles.img} src={card.fileURL} alt="card" />
         </li>
     )
-};
+});
 
 export default ImgItem;
