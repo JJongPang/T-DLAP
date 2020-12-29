@@ -1,0 +1,50 @@
+.box {
+    display: flex;
+}
+
+.input {
+    display: none;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    background-color: transparent;
+    outline: 0;
+    cursor: pointer;
+}
+
+.icon {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    color: white;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.loading {
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    border-top: 3px solid blue;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
