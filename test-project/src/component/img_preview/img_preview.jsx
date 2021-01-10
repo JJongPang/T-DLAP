@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage} from "@fortawesome/free-solid-svg-icons"
 
 const ImgPreview = memo(({preview, cards}) => {
+    console.log(preview);
     return (
         <li className={styles.preview}>
             { preview && cards && <img className={styles.img} src={preview.fileURL} alt="card" /> }

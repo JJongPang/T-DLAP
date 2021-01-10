@@ -6,6 +6,7 @@ import styles from './img_list.module.css';
 
 
 const ImgList = memo(({ preview, handlerPreviewEvent, cards, addCard, FileInput, onDragStart, onDragOver, onDrop, onDragLeave,imgePreview }) => {
+    console.log(cards);
     return (
         <div className={styles.box}>
             <ul className={styles.list} onClick={handlerPreviewEvent}>
